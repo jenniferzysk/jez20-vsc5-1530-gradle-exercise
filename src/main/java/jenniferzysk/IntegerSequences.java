@@ -28,21 +28,27 @@ public class IntegerSequences{
             System.exit(2);
         }
         
+        if(mode.equals("TRIANGLE"){
+            triangle(input);
+        }
         
+        else if(mode.equals("LAZY"){
+            lazy(input);
+        }
+            
+    }
+    
+    public static void triangle(int input){
         int tri = 0;
-        if(mode.equals("TRIANGLE")){
             for(int i = input; i > 0; i--){
                 tri = tri + i;
             }
             System.out.println("Tri(" + input + ") = " + tri);
-        }
-        
-        else if(mode.equals("LAZY")){
-            int maxCuts = ((input * input) + input + 2)/2;
-            System.out.println("Lazy(" + input + ") = " + maxCuts);
-            
-        }
+    }
     
+    public static void lazy(int input){
+        int maxCuts = ((input * input) + input + 2)/2;
+        System.out.println("Lazy(" + input + ") = " + maxCuts);
     }
 
 }
