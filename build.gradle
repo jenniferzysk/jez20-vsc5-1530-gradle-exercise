@@ -32,6 +32,11 @@ task monkey << {
 
 run {    
     systemProperties System.getProperties()
-
-    args System.getProperty("args").split()    
+    if(System.getProperty("args") == null){
+      println "error"
+    }
+    else{
+      args System.getProperty("args").split()    
+    }
 }
+
